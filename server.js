@@ -19,7 +19,7 @@ app.use(express.static('public'));
 // ============================================
 // API KEY CONFIGURATION
 // ============================================
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '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';
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 // Create necessary directories
@@ -1516,5 +1516,6 @@ process.on('unhandledRejection', (error) => {
     console.error('❌ Error:', error);
 
 });
+
 
 
