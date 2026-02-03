@@ -38,8 +38,8 @@ ensureDirectories();
 // ============================================
 
 async function openSite(page, url) {
-    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    await page.waitForTimeout(3000);
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await page.waitForTimeout(6000);
 }
 
 function detectLoginPage(url, page) {
@@ -71,7 +71,7 @@ async function waitForUserLogin(page) {
                    !url.includes('/ap/signin');
         }, { timeout: 300000 });
         
-        await page.waitForTimeout(2000);
+        await page.waitForTimeout(6000);
         console.log('✅ Login detected, resuming automation');
         return true;
     } catch (e) {
@@ -284,7 +284,7 @@ async function extractAmazonProducts(page) {
 // Flipkart Extractor - Enhanced
 async function extractFlipkartProducts(page) {
     await scrollAndWait(page, 5);
-    await page.waitForTimeout(2000);
+    await page.waitForTimeout(6000);
     
     const products = await page.evaluate(() => {
         const results = [];
@@ -1516,4 +1516,5 @@ process.on('unhandledRejection', (error) => {
     console.error('❌ Error:', error);
 
 });
+
 
