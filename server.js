@@ -14,7 +14,7 @@ const SESSION_FILE = path.join(__dirname, 'browser-session.json');
 // Middleware
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
-app.use(express.static('index'));
+app.use(express.static('public'));
 
 // ============================================
 // API KEY CONFIGURATION
@@ -1516,3 +1516,4 @@ process.on('unhandledRejection', (error) => {
     console.error('❌ Error:', error);
 
 });
+
